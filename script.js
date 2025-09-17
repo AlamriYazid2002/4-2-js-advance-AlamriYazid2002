@@ -112,7 +112,22 @@ Task:
 3) Handle the error using try { ... } catch (e) { ... } finally { ... } and log messages
    in each block so you can see the flow of control.
 */
+function arrayMax(arr){
+   if (!Array.isArray(arr) || arr.length === 0) {
+    throw new Error("Empty array");
+  }
+  return Math.max(...arr);
+}
 
+try{
+   let max = arrayMax([]);
+}
+catch(e){
+   console.log("Empty arrays are not allowed")
+}
+finally{
+   console.log("Finished operation")
+}
 // ===================================================================================
 // TODO-7: REGEX + forEach — find words containing 'ab' and log matches from the list
 // ===================================================================================
